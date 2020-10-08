@@ -1,0 +1,21 @@
+{
+    "result": [
+        {
+            "storeID": "00001",
+            "storeName": "아오스요거트",
+            "star": 5,
+            "image": "image_url",
+            "represent": "그릭요거트"
+        },
+        {
+            "storeID": "00002",
+            "storeName": "고향산천닭갈비",
+            "star": 4,
+            "image": "image_url",
+            "represent": "숯불닭갈비"
+        }
+    ],
+    "isSuccess": true,
+    "code": 100,
+    "message": "한식조회성공"
+}
