@@ -1,6 +1,9 @@
 # nodeAPI-matziptest
 노드 restful api  test
 
+- nodejs
+- mongoDB
+
 
 - 일단 localhost 
 - port : 8000
