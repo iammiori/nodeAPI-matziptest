@@ -7,7 +7,8 @@ module.exports = function(router){
         res.render('adduser');
     });
     //var userName;
-    router.post('/adduser', function(req, res){ //post : 주소, html바디 변수 요청, get :일반
+    router.post('/adduser', function(req, res){ 
+        //post : 주소, html바디 변수 요청, get :일반
         //userName = req.body.name;
         var database = req.app.get('database');
         var newUser = new database.UserModel({
@@ -42,6 +43,7 @@ module.exports = function(router){
 
     router.post('/changeUser',function(req,res){
         var database = req.app.get('database');
+        // db에서 검색 알고리즘
         database.UserModel.findOne({
             'user_id': req.body.user_id //아이디 검색
         }, function(err,result){
