@@ -8,24 +8,34 @@ module.exports = function(app,detailfoodDatas)
         loc.longitude = req.body.longitude;
         loc.latitude = req.body.latitude;
         //detailfoodDatas.find({""})
+        
+        detailfoodDatas.findOne({"sid" : req.body.sid},function(err,detailfood){
 
-        detailfoodDatas.findOne({email: req.body.email}).exec()
+            
 
-        .then(() => {
+            if (!detailfood){
+                console.log('no store info');
+                return res.json({result:1111});
+                //throw new Error('promise chain break due to no store info')
+            }
+            if (err){
+                console.log("err"+err);
+                return res.json({result: 1111});
+            } else {
+                //res.render("kfood API");
+                console.log("ttibal");
 
+                //var resObj = new Object();
+                //detailfoodDatas.findOne({내 uid가 있는지 확인})
 
-            res.json({result:101});
+                detailfood.likes = false;
+        
 
-        })
-
-
-
-
-        .catch(() => {
-
-        })
-
-        return res.json(detailfoodDatas);
+                //res.json({li})
+                return res.json(detailfood);
+            }
+        }).exec();
+    
     });
 
 
