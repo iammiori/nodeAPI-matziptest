@@ -10,12 +10,15 @@ module.exports = function(app,detailfoodDatas)
         //detailfoodDatas.find({""})
 
         var uid  = req.body.uid;
+  
+      
         
         detailfoodDatas.findOne({
-            "sid" : req.body.sid
+            "result.sid" : req.body.sid
 
         },function(err,detailfood){
 
+           
             if (!detailfood){
                 console.log('no store info');
                 return res.json({result:1111});
@@ -32,12 +35,17 @@ module.exports = function(app,detailfoodDatas)
                 //detailfoodDatas.findOne({내 uid가 있는지 확인})
 
                 //detailfood.likes = false;
-                detailfood.like = uid
-                //console.log(uid)
-                detailfood.likes.push(detailfood.like);
+                //detailfood.result.like = uid
+                console.log(uid)
+                idx = Number(req.body.sid)-1
+                //console.log(Number(req.body.sid)-1)
+                detailfood.result.likes[idx].push(uid);
+                //이거 안하면 배열에 쌓이지 않음 꼭해주셈
+                detailfood.markModified('result');
                 detailfood.save();
-
+           
                 //res.json({li})
+                //console.log(detailfood.like.length);
                 return res.json(detailfood);
             }
         }).exec();

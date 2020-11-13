@@ -12,8 +12,7 @@ var detailfoodSchema = new Schema({
     result : 
     {
     menuName : String,
-    menuPrice : Number
-    },
+    menuPrice : Number,
     likes : [],
 
     sid : String,
@@ -21,6 +20,7 @@ var detailfoodSchema = new Schema({
     tel : String,
     storeLon : Number,
     storeLat : Number
+    }
 });
 
 //mongoose.model('디비상 콜렉션 이름', 스키마 변수명)
