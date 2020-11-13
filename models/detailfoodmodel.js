@@ -14,7 +14,7 @@ var detailfoodSchema = new Schema({
     menuName : String,
     menuPrice : Number
     },
-    likes : [{"uid":String}],
+    likes : [],
 
     sid : String,
     link : String,

@@ -34,13 +34,14 @@ module.exports = function(app,detailfoodDatas)
                 //detailfood.likes = false;
                 detailfood.like = uid
                 //console.log(uid)
-                detailfood.likes.push({"uid" : detailfood.like});
-        
+                detailfood.likes.push(detailfood.like);
+                detailfood.save();
 
                 //res.json({li})
                 return res.json(detailfood);
             }
         }).exec();
+
     
     });
 
