@@ -1,22 +1,33 @@
+  
+// create detailfood schema
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // 스키마 변수명
+// var like = new Schema({
+//     uid: String
+// });
 var detailfoodSchema = new Schema({
     result : 
     {
-    foodID : String,
-    foodName : String,
-    price : Number, 
-    star : Number,
-    image : String,
-    distance : String
+    menuName : String,
+    menuPrice : Number
     },
-    isSuccess : Boolean,
-    code : Number,
-    message : String
+    likes : [{"uid":String}],
+
+    sid : String,
+    link : String,
+    tel : String,
+    storeLon : Number,
+    storeLat : Number
 });
 
 //mongoose.model('디비상 콜렉션 이름', 스키마 변수명)
 module.exports = mongoose.model('detailfoods', detailfoodSchema);
+
+
+// var likeModel = new Object();
+// likeModel.uid = ""
+
+// detailfoodSchema.push(likeModel);

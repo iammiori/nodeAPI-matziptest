@@ -4,14 +4,17 @@ const detailfoodmodel = require("../models/detailfoodmodel");
 module.exports = function(app,detailfoodDatas)
 {
     app.post('/detailfood',(req,res) => {
-        var loc = new Object();
-        loc.longitude = req.body.longitude;
-        loc.latitude = req.body.latitude;
+        //var loc = new Object();
+        //loc.longitude = req.body.longitude;
+        //loc.latitude = req.body.latitude;
         //detailfoodDatas.find({""})
-        
-        detailfoodDatas.findOne({"sid" : req.body.sid},function(err,detailfood){
 
-            
+        var uid  = req.body.uid;
+        
+        detailfoodDatas.findOne({
+            "sid" : req.body.sid
+
+        },function(err,detailfood){
 
             if (!detailfood){
                 console.log('no store info');
@@ -28,7 +31,10 @@ module.exports = function(app,detailfoodDatas)
                 //var resObj = new Object();
                 //detailfoodDatas.findOne({내 uid가 있는지 확인})
 
-                detailfood.likes = false;
+                //detailfood.likes = false;
+                detailfood.like = uid
+                //console.log(uid)
+                detailfood.likes.push({"uid" : detailfood.like});
         
 
                 //res.json({li})
