@@ -1,6 +1,8 @@
 # nodeAPI-matziptest
 노드 restful api  test
 
+(로컬 테스트용)
+
 - nodejs
 - mongoDB
 
