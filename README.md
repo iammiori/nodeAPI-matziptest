@@ -19,3 +19,4 @@
    - get
 - /detailfood
    - post
+   - findOne 으로 조회 및 post 가능 (좋아요 확인)
