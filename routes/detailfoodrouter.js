@@ -9,11 +9,15 @@ module.exports = function(app,detailfoodDatas)
         //loc.latitude = req.body.latitude;
         //detailfoodDatas.find({""})
 
+        //uid : 사용자 폰 정보
+        //postman 에서 body에 넘겨주면됨
         var uid  = req.body.uid;
   
       
         
         detailfoodDatas.findOne({
+            //postman에서 body로 넘겨줘
+            // 가게정보 (가게아이디)
             "result.sid" : req.body.sid
 
         },function(err,detailfood){
@@ -37,6 +41,8 @@ module.exports = function(app,detailfoodDatas)
                 //detailfood.likes = false;
                 //detailfood.result.like = uid
                 console.log(uid)
+                
+                //가게아이디 숫자로 변환후 -1 (인덱스로 넣어주기위해)
                 idx = Number(req.body.sid)-1
                 //console.log(Number(req.body.sid)-1)
                 detailfood.result.likes[idx].push(uid);
