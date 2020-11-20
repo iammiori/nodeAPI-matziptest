@@ -7,7 +7,7 @@
 - mongoDB
 
 
-- 일단 localhost 
+- localhost test
 - port : 8000
 - http://127.0.0.1:8000/kfood 로 get 하면 json 정보뜸
 
