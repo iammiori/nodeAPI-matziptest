@@ -5,6 +5,7 @@ var express     = require('express');
 var app         = express();
 var bodyParser  = require('body-parser');
 var mongoose    = require('mongoose');
+const multer = require('multer');
 
 // [CONFIGURE SERVER PORT]
 var port = process.env.PORT || 3000;
