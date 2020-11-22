@@ -1,11 +1,13 @@
 # nodeAPI-matziptest
 노드 restful api  test
 
+(로컬 테스트용)
+
 - nodejs
 - mongoDB
 
 
-- 일단 localhost 
+- localhost test
 - port : 8000
 - http://127.0.0.1:8000/kfood 로 get 하면 json 정보뜸
 
@@ -17,3 +19,4 @@
    - get
 - /detailfood
    - post
+   - findOne 으로 조회 및 post 가능 (좋아요 확인)
