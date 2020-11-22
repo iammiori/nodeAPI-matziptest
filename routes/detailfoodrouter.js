@@ -14,6 +14,7 @@ module.exports = function(app,detailfoodDatas)
       
         
         detailfoodDatas.findOne({
+            //result안 sid
             "result.sid" : req.body.sid
 
         },function(err,detailfood){
