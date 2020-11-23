@@ -19,4 +19,5 @@
    - get
 - /detailfood
    - post
-   - findOne 으로 조회 및 post 가능 (좋아요 확인)
+   - body에 uid
+   - findOne 으로 sid(가게id)조회 및 post 가능 (좋아요 확인)
